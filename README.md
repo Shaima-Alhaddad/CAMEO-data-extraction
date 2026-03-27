@@ -8,31 +8,32 @@ This repository provides a Python script to extract and rename files from downlo
 ## 📂 Folder Structure
 
 Place the **extract.py** script in the same directory as your downloaded CAMEO folder:
-Create a foulder name "result" inside the "example 2026.02.21 foulder" 
-place the **rename.py** script in the result foulder
+Create a folder name "result" inside the "example 2026.02.21 folder" 
+place the **rename.py** script in the result folder
 
 ```
-CAMEO foulder
+CAMEO folder
 │
 ├ extract.py file
 │
-└ example 2026.02.21 foulder
+└ example 2026.02.21 folder
     │
     ├── target1 file
     ├── target2 file
     │
-    ├── result foulder
+    ├── result folder
           └── rename.py file
 ```
 
 ---
 
-## 🔧 Setup
+## 🔧 Modifications Setup
 
-Open the scripts and modify **only this line**:
+Open the scripts and modify the files locattions
 
 ```python
-base_path = '/YOUR PATH/CAMEO/example2026.02.21'
+source_directory = '/YOUR PATH/CAMEO/example2026.02.21/*/servers/server5/model-1/scores/'
+destination_directory = '/YOUR PATH/CAMEO/example2026.02.21/result/'
 ```
 
 Replace `/YOUR PATH/` with your actual system path.
@@ -42,29 +43,56 @@ Replace `/YOUR PATH/` with your actual system path.
 #### macOS
 
 ```python
-base_path = '/Users/yourname/Desktop/CAMEO/example2026.02.21'
+destination_directory = '/Users/yourname/Desktop/CAMEO/example2026.02.21/result/'
 ```
 
 #### Windows
 
 ```python
-base_path = 'C:/Users/YourName/Desktop/CAMEO/example2026.02.21'
+destination_directory = 'C:/Users/YourName/Desktop/CAMEO/example2026.02.21/result/'
 ```
 
 #### Linux
 
 ```python
-base_path = '/home/yourname/CAMEO/example2026.02.21'
+destination_directory = '/home/yourname/CAMEO/example2026.02.21/result/'
+```
+
+---
+
+
+Note:
+**In the extract.py file**
+
+```bash
+Edit the script to specify the server number that you wish to extract.
+Replace the server# with the server number such as /server5/, without space.
+
+source_directory = '/YOUR PATH/CAMEO/example2026.02.21/*/servers/server#/model-1/scores/'
+```
+
+```bash
+The second line should be the path of the result folder
+
+destination_directory = '/YOUR PATH/CAMEO/example2026.02.28/result/'
+```
+
+
+Note:
+**In the rename.py file**
+Replace the folder path to your result folder path
+
+```bash
+folder_path = '/YOUR PATH/CAMEO/example2026.02.28/result/'
 ```
 
 ---
 
 ## ▶️ Usage
-
-Run the scripts from the terminal ensuring the script path location. 
+**Run the scripts from the terminal ensuring the script path location is set in the terminal before calling the scripts.**
 
 ```bash
-# For extracting the file from CAMEO foulder
+# For extracting the file from CAMEO folder
 python3 extract.py    
 
 ```
